@@ -1,0 +1,16 @@
+<div class="mt-4">
+    <div class="row">
+        <div class="col-lg-3">
+            <button>Học nay</button>
+        </div>
+        {{#each course}}
+        {{#if @last}}
+        <div class="col-lg-3">
+            <h2>{{this.name}}</h2>
+            <iframe width="885" height="498" src="https://www.youtube.com/embed/{{this.videoId}}?list=PL_-VfJajZj0VatBpaXkEHK_UPHL7dW6I3" title=""Select all" with checkbox" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <p>{{this.description}}</p>
+        </div>
+        {{/if}}
+        {{/each}}
+    </div>
+</div>

@@ -1,0 +1,26 @@
+<div class="mt-4">
+    <h3>Cập nhật khoá học</h3>
+    {{#each course}}
+        {{#if @last}}
+            <form class="mt-4" method="post" action="/courses/{{this._id}}?_method=put">
+                <div class="form-group">
+                    <label for="name">Tên khóa học</label>
+                    <input type="text" class="form-control" value="{{this.name}}" id="name" name="name">
+                </div>
+                <div class="form-group">
+                    <label for="description">Mô tả</label>
+                    <textarea class="form-control" id="description" name="description">{{this.description}}</textarea>
+                </div>
+                <div class="form-group">
+                    <label for="videoId">video Id</label>
+                    <input type="text" class="form-control" value="{{this.videoId}}" id="videoId" name="videoId">
+                </div>
+                <div class="form-group">
+                    <label for="level">Trình độ</label>
+                    <input type="text" class="form-control" value="{{this.level}}" id="level" name="level">
+                </div>    
+                <button type="submit" class="btn btn-primary">Xác nhận</button>
+            </form>
+        {{/if}}
+    {{/each}}
+</div>
